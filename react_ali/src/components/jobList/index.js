@@ -44,10 +44,12 @@ export default class Footer extends Component {
    
     scroll (time, top = 50) {
         let that = this;
+        let endTop=300-50*this.state.list.length
+        console.log(endTop)
         let UL = document.querySelector('.position-list');
         TimeId = setInterval(move, time);
         function move () {
-            if ( top < -700) {
+            if ( top < endTop) {
                 clearInterval(TimeId);
                 top = 50;
                 that.scroll(32);
